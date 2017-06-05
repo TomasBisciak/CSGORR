@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="636.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csgorr.controllers.LoadoutViewController">
+   <top>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox id="loadoutsBg" alignment="CENTER" spacing="5.0" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Weapon slots" textFill="#d3d3d3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="toggleButtonHolder" alignment="CENTER" prefHeight="65.0" prefWidth="842.0" style="-fx-background-color: #212324;" />
+                  <Button fx:id="btnClearSlot" mnemonicParsing="false" onAction="#clearSlotOnAction" style="-fx-background-radius: 0;" text="Clear slot" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="842.0" style="-fx-background-color: #212324;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Loadout menu" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="338.0" style="-fx-background-color: #212324;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnClearAll" mnemonicParsing="false" onAction="#clearAllOnAction" style="-fx-background-radius: 0;" text="Clear all" />
+                        <Button fx:id="btnDelete" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteOnAction" style="-fx-background-radius: 0;" text="Delete" />
+                        <Button fx:id="btnDuplicate" layoutX="188.0" layoutY="10.0" mnemonicParsing="false" onAction="#duplicateOnAction" style="-fx-background-radius: 0;" text="Duplicate" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="395.0" spacing="10.0">
+                     <children>
+                        <Label textFill="WHITE" />
+                        <TextField fx:id="txtFieldLoadoutName" promptText="Loadout name" style="-fx-background-radius: 0;" />
+                        <Button fx:id="btnSaveLoadout" mnemonicParsing="false" onAction="#saveLoadoutOnAction" style="-fx-background-radius: 0;" text="Save loadout">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </top>
+   <center>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox fx:id="loadoutListViewContainer" alignment="CENTER">
+               <children>
+                  <Label text="Saved Loadouts" />
+                  <ListView fx:id="listViewLoadouts" prefHeight="291.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnNewLoadout" mnemonicParsing="false" onAction="#newLoadoutOnAction" prefHeight="25.0" prefWidth="202.0" style="-fx-background-radius: 0;" text="New loadout" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Weapons" />
+                  <ListView fx:id="listViewWeapons" prefHeight="436.0" prefWidth="499.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="818.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csgorr.controllers.WeaponViewController">
+   <center>
+      <SplitPane dividerPositions="0.7634803921568627" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <items>
+            <BorderPane prefHeight="296.0" prefWidth="851.0">
+               <bottom>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="842.0" style="-fx-background-color: #212324;">
+                     <children>
+                        <Label text="Weapon menu" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="338.0" style="-fx-background-color: #212324;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="btnDelete" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteOnAction" style="-fx-background-radius: 0;" text="Delete" />
+                              <Button fx:id="btnDuplicate" layoutX="188.0" layoutY="10.0" mnemonicParsing="false" onAction="#duplicateOnAction" style="-fx-background-radius: 0;" text="Duplicate" />
+                              <Button fx:id="exportBtn" layoutX="61.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportOnAction" style="-fx-background-radius: 0;" text="Export weapon" />
+                              <Button fx:id="importBtn" layoutX="128.0" layoutY="10.0" mnemonicParsing="false" onAction="#importOnAction" style="-fx-background-radius: 0;" text="Import weapons" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="395.0" spacing="10.0">
+                           <children>
+                              <Label textFill="WHITE" />
+                              <TextField fx:id="txtFieldWeaponName" promptText="Weapon name" style="-fx-background-radius: 0;" />
+                              <Button fx:id="btnSaveWeapon" mnemonicParsing="false" onAction="#saveOnAction" style="-fx-background-radius: 0;" text="Save weapon">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </bottom>
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <bottom>
+                        <VBox id="weaponMgrBg" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox spacing="5.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <HBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="btnOpenPaint" mnemonicParsing="false" onAction="#btnOpenPaintOnAction" style="-fx-background-radius: 0 0 5 5;" text="Open &quot;Paint&quot;" />
+                                          <Button fx:id="btnTestPattern" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#testPatternOnAction" style="-fx-background-radius: 0 0 5 5;" text="Test pattern" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="10.0">
+                                 <children>
+                                    <VBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <Label text="Pattern row" />
+                                          <GridPane prefHeight="90.0" prefWidth="319.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="95.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="104.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="120.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="txtFieldPerStep" GridPane.columnIndex="1" />
+                                                <Label text="Pixels per step" />
+                                                <Label layoutX="10.0" layoutY="17.0" text="Direction" GridPane.rowIndex="1" />
+                                                <HBox alignment="CENTER" prefHeight="30.0" prefWidth="130.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                   <children>
+                                                      <Label text="&amp;" />
+                                                      <ComboBox fx:id="combobxDir2" prefHeight="25.0" prefWidth="94.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label layoutX="10.0" layoutY="47.0" text="Num. of steps" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtFieldNumOfSteps" layoutX="105.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ComboBox fx:id="combobxDir1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                          <HBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="btnAddRow" mnemonicParsing="false" onAction="#addRowOnAction" text="Add" />
+                                                <Button fx:id="btnRemoveRow" mnemonicParsing="false" onAction="#removeRowOnAction" text="Remove" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                    <VBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <Label text="Smoothness settings" />
+                                          <GridPane prefHeight="145.0" prefWidth="332.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="txtFieldSF" GridPane.columnIndex="1" />
+                                                <TextField fx:id="txtFieldDV" prefHeight="25.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="SMOOTHNESS_FACTOR" />
+                                                <Label layoutX="10.0" layoutY="14.0" text="DEVIATION_VALUE" GridPane.rowIndex="1" />
+                                                <Label layoutX="10.0" layoutY="47.0" text="DEVIATION_PERCENTAGE" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtFieldDP" layoutX="184.0" layoutY="43.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </bottom>
+                     <center>
+                        <VBox id="weaponMgrBg" alignment="CENTER" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Pattern">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ListView fx:id="listViewRecoil" prefHeight="196.0" prefWidth="1024.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ListView fx:id="listViewWeapons" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <HBox alignment="CENTER" prefHeight="19.0" prefWidth="997.0" style="-fx-background-color: #2980b9;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnNewWeapon" mnemonicParsing="false" onAction="#newWeaponOnAction" style="-fx-background-radius: 0; -fx-border-width: 0 0 0 0; -fx-background-insets: 0 0 0 0;" text="New Weapon" />
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

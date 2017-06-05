@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csgorr.controllers.PreferencesViewController">
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+         <content>
+            <BorderPane minHeight="-Infinity" prefHeight="850.0" prefWidth="728.0">
+               <center>
+                  <AnchorPane>
+                     <children>
+                        <BorderPane id="preferencesBg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="728.0" stylesheets="@../../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DADFE1;">
+                                       <StackPane.margin>
+                                          <Insets left="100.0" right="100.0" />
+                                       </StackPane.margin>
+                                    </BorderPane>
+                                    <BorderPane>
+                                       <StackPane.margin>
+                                          <Insets bottom="20.0" left="150.0" right="150.0" top="20.0" />
+                                       </StackPane.margin>
+                                       <center>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="140.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="288.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Ingame Sensitivity" />
+                                                <Slider fx:id="hsliderIngameSensitivity" blockIncrement="0.5" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" />
+                                                <Label layoutX="10.0" layoutY="28.0" text="Toggle key" GridPane.rowIndex="2" />
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldToggleKey" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnToggleKeyDetect" mnemonicParsing="false" onAction="#toggleKeyDetectOnAction" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <Label layoutX="10.0" layoutY="79.0" text="Trigger timeout" GridPane.rowIndex="4" />
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldTriggerTimeout" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnPreTriggerTimeoutDefault" mnemonicParsing="false" onAction="#preTriggerTimeoutDefaultOnAction" text="Default" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="Weapon Hotkeys" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="10.0" layoutY="166.0" text="Weapon hotkey #1" GridPane.rowIndex="7" />
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK1" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK1" mnemonicParsing="false" onAction="#hkOnDetect1" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK2" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK2" mnemonicParsing="false" onAction="#hkOnDetect2" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="245.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK3" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK3" mnemonicParsing="false" onAction="#hkOnDetect3" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <Label layoutX="10.0" layoutY="213.0" text="Weapon hotkey #2" GridPane.rowIndex="8" />
+                                                <Label layoutX="10.0" layoutY="260.0" text="Weapon hotkey #3" GridPane.rowIndex="9" />
+                                                <Label layoutX="10.0" layoutY="307.0" text="Weapon hotkey #4" GridPane.rowIndex="10" />
+                                                <Label layoutX="10.0" layoutY="353.0" text="Weapon hotkey #5" GridPane.rowIndex="11" />
+                                                <Label layoutX="10.0" layoutY="701.0" text="Weapon hotkey #6" GridPane.rowIndex="12" />
+                                                <Label layoutX="10.0" layoutY="443.0" text="Weapon hotkey #7" GridPane.rowIndex="13" />
+                                                <Label layoutX="10.0" layoutY="489.0" text="Weapon hotkey #8" GridPane.rowIndex="14" />
+                                                <Label layoutX="10.0" layoutY="535.0" text="Weapon hotkey #9" GridPane.rowIndex="15" />
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="290.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK4" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK4" mnemonicParsing="false" onAction="#hkOnDetect4" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="336.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK5" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK5" mnemonicParsing="false" onAction="#hkOnDetect5" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="382.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK6" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK6" mnemonicParsing="false" onAction="#hkOnDetect6" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="428.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK7" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK7" mnemonicParsing="false" onAction="#hkOnDetect7" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="474.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK8" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK8" mnemonicParsing="false" onAction="#hkOnDetect8" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="520.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK9" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK9" mnemonicParsing="false" onAction="#hkOnDetect9" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label text="Note: Only increments of 0.5 are supported, " />
+                                                      <Label layoutX="10.0" layoutY="10.0" text="you can however use any mouse DPI you want to." />
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="150.0" layoutY="54.0" prefHeight="22.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label text="Click &quot;Detect&quot; and then press Key to bind." />
+                                                   </children>
+                                                </VBox>
+                                                <Label layoutX="10.0" layoutY="598.0" text="Weapon hotkey #10" GridPane.rowIndex="16" />
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                                                   <children>
+                                                      <TextField fx:id="txtFieldHK10" editable="false" prefHeight="25.0" prefWidth="126.0" />
+                                                      <Button fx:id="btnDetectHK10" mnemonicParsing="false" onAction="#hkOnDetect10" text="Detect" />
+                                                   </children>
+                                                </HBox>
+                                                <VBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <children>
+                                                      <Label text="Timeout before recoil reduction is enabled." />
+                                                      <Label layoutX="10.0" layoutY="10.0" text="Integer represents miliseconds." />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                       </center>
+                                       <top>
+                                          <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="btnResetToDefault" mnemonicParsing="false" onAction="#resetToDefaultOnAction" text="Reset to default">
+                                                   <HBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </StackPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <HBox fx:id="hboxBottom" alignment="CENTER" prefHeight="5.0" prefWidth="730.0" spacing="10.0" style="-fx-background-color: #2980b9;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#confirmChanges" style="-fx-background-radius: 0; -fx-border-width: 0 0 0 0; -fx-background-insets: 0 0 0 0;" text="Confirm">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
