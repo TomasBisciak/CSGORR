@@ -5,7 +5,6 @@ Any game that allows invocation of WIN32 mouse/key_event is supported.
 
 Versions 1.0 and upwards will not be freeware.
 
-This is not completed product - do not decompile or redistribute.
 Some features might not work as intended / missing / not work at all.
 
 Application uses port 64878 and does not require connection to internet.
